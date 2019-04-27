@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+message Square {
+    double Side = 1;
+}
+
+message Rectangle {
+    double Width = 1;
+    double Height = 2;
+}
+
+message Circle {
+    double Radius = 1;
+}
+
+message Result {
+    double Area = 1;
+}
+
+service Area {
+    rpc Square (Square) returns (Result) {}
+    rpc Rectangle (Square) returns (Result) {}
+    rpc Circle (Square) returns (Result) {}
+}
