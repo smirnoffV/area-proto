@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-message Square {
+message SquareRequest {
     double Side = 1;
 }
 
-message Rectangle {
+message RectangleRequest {
     double Width = 1;
     double Height = 2;
 }
 
-message Circle {
+message CircleRequest {
     double Radius = 1;
 }
 
@@ -18,7 +18,7 @@ message Result {
 }
 
 service Area {
-    rpc Square (Square) returns (Result) {}
-    rpc Rectangle (Square) returns (Result) {}
-    rpc Circle (Square) returns (Result) {}
+    rpc Square (SquareRequest) returns (Result);
+    rpc Rectangle (RectangleRequest) returns (Result);
+    rpc Circle (CircleRequest) returns (Result);
 }
