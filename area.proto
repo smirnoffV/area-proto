@@ -17,8 +17,18 @@ message Result {
     double Area = 1;
 }
 
+message NumberRequest {
+    int64 Number = 1;
+}
+
+message NumberResponse {
+    int64 Result = 1;
+}
+
 service Area {
     rpc Square (SquareRequest) returns (Result);
     rpc Rectangle (RectangleRequest) returns (Result);
     rpc Circle (CircleRequest) returns (Result);
+
+    rpc Max(stream NumberRequest) returns (NumberResponse);
 }
