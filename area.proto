@@ -30,5 +30,5 @@ service Area {
     rpc Rectangle (RectangleRequest) returns (Result);
     rpc Circle (CircleRequest) returns (Result);
 
-    rpc Max(stream NumberRequest) returns (NumberResponse);
+    rpc Max(stream NumberRequest) returns (stream NumberResponse);
 }
